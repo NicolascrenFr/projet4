@@ -6589,6 +6589,10 @@ textarea.form-control-lg {
   border: 0 !important;
 }
 
+.visually-hidden{
+  visibility: hidden;
+}
+
 .stretched-link::after {
   position: absolute;
   top: 0;
