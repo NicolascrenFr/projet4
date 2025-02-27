@@ -1,0 +1,25 @@
+name: Deploy Static Site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Static Files
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./  # Si tes fichiers sont directement à la racine (index.html etc.)
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
